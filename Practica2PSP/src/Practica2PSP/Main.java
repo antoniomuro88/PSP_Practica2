@@ -46,12 +46,12 @@ public class Main implements Runnable {
 				System.out.println();
 			} else {
 				if (Thread.currentThread().getName().equals(hilo[primero].getName())) {
-					//Si el camello llega a la meta lo imprime por pantalla
+					// Si el camello llega a la meta lo imprime por pantalla
 					if (posicionesTotales <= (posicionesTotales - pos.getPosicionesLibres())) {
 						System.err.println(Thread.currentThread().getName() + " HA LLEGADO A LA META!");
 						System.out.println();
 					} else {
-						//Si el camello va el primero lo imprime por pantalla
+						// Si el camello va el primero lo imprime por pantalla
 						System.out.println(Thread.currentThread().getName() + " va en cabeza!");
 						System.out.println();
 					}
@@ -97,7 +97,7 @@ public class Main implements Runnable {
 			hilo[i].start();
 			pc[i] = new Carrera();
 		}
-
+		System.out.println();
 	}
 
 	public static int getLongitudCarrera() {
@@ -126,7 +126,7 @@ public class Main implements Runnable {
 		}
 		// Imprimimos clasificación
 		System.out.println("\nCLASIFICACIÓN");
-		System.out.println("--------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------");
 		for (int i = 1; i < n; i++) {
 			if (podio[i].getPosicionesLibres() <= 0) {
 				System.out.println(i + "º: " + camel[i].getName());
@@ -134,8 +134,8 @@ public class Main implements Runnable {
 				System.out.println(i + "º: " + camel[i].getName() + " - Posiciones restantes para llegar a la meta: "
 						+ podio[i].getPosicionesLibres() + " de " + posicionesTotales);
 			}
-			
+
 		}
-		System.out.println("--------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------");
 	}
 }
